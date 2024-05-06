@@ -1,6 +1,6 @@
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
-    let letters= word.textContent.split("");
+    let letters = word.textContent.split("");
     word.textContent="";
     letters.forEach((letter) => {
         let span = document.createElement("span")
@@ -129,3 +129,35 @@ scrollBottom.forEach((el) => observer.observe(el))
 
 const scrollTop = document.querySelectorAll(".scroll-top")
 scrollTop.forEach((el) => observer.observe(el))
+
+
+
+
+/*=============== EMAIL JS ===============*/
+
+const contactForm = document.querySelector("#contact-form");
+contactMessage = document.querySelector("#contact-message");
+
+
+contactForm.addEventListener("submit", sendEmail)
+
+const serviceID = "service_mtdfzzx";
+const templateID = "template_yny0yji";
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(serviceID, templateID, contactForm).then(
+    () => {
+      contactMessage.textContent = "Message Sent Successfully ✅";
+
+      setTimeout(() => {
+        contactMessage.textContent = "";
+      }, 5000);
+
+      contactForm.reset();
+    },
+    () => {
+      contactMessage.textContent = "Message not sent (service error) ❌";
+    }
+  );
+}
