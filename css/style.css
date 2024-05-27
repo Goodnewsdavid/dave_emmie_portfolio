@@ -192,6 +192,8 @@ section {
   position: absolute;
   display: flex;
   opacity: 0;
+ 
+ 
 }
 
 .change-text h3 .word .letter {
@@ -871,6 +873,10 @@ section {
   font-size: 1rem;
 }
 
+.contact-message{
+  margin: 10px 0;
+}
+
 
 /* Footer css */
 
@@ -1118,7 +1124,7 @@ footer a {
   }
 
   .info-box{
-    width: 316px;
+    width: 279px;
   }
 
   .navlist a {
@@ -1187,7 +1193,11 @@ footer a {
     width: 300px;
   }
 
-
+  .change-text h3 .word {
+    font-size: 22px;
+    margin-top: 6px;
+   
+  }
 
   .info-about1,
   .info-about2,
